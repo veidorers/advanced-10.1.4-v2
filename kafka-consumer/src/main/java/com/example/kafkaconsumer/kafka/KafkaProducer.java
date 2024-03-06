@@ -1,6 +1,6 @@
-package com.example.kafkaproducer.kafka;
+package com.example.kafkaconsumer.kafka;
 
-import com.example.kafkaproducer.model.Book;
+import com.example.kafkaconsumer.model.Book;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,6 @@ public class KafkaProducer {
     public void sendMessage(Book book) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         String bookJson = mapper.writeValueAsString(book);
-        kafkaTemplate.send("topic-one", bookJson);
-        System.out.println("Send message: " + book);
+        kafkaTemplate.send("topic-two", bookJson);
     }
 }

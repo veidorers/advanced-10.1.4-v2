@@ -1,4 +1,4 @@
-package com.example.kafkaproducer.kafka;
+package com.example.kafkaconsumer.kafka;
 
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;
@@ -23,7 +23,7 @@ public class KafkaConfig {
     }
 
     @Bean
-    public NewTopic topicOne() {
-        return new NewTopic("topic-one", 1, (short) 1);
+    public NewTopic topicTwo() {
+        return new NewTopic("topic-two", 1, (short) 1);
     }
 }
