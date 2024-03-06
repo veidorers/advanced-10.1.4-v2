@@ -26,6 +26,4 @@ public class KafkaConfig {
     public NewTopic newTopic() {
         return new NewTopic("topic-one", 1, (short) 1);
     }
-
-
 }
