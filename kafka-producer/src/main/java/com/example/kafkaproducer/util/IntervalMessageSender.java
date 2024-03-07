@@ -29,7 +29,7 @@ public class IntervalMessageSender {
     public void sendMessage() {
         var book = new Book();
         var random = new Random();
-        book.setName(String.valueOf(random.nextInt(1000)));
+        book.setName(String.valueOf(random.nextInt(1000000)));
         var hashCode = book.hashCode();
         book.setName("Book" + hashCode);
         book.setDescription("Description" + hashCode);
