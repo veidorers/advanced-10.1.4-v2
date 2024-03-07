@@ -21,5 +21,8 @@ public class KafkaProducer {
         ObjectMapper mapper = new ObjectMapper();
         String bookJson = mapper.writeValueAsString(book);
         kafkaTemplate.send("topic-two", bookJson);
+        System.out.println("Send message: " + book);
     }
+
+
 }

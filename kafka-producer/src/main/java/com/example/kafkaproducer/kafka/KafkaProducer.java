@@ -17,10 +17,14 @@ public class KafkaProducer {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void sendMessage(Book book) throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-        String bookJson = mapper.writeValueAsString(book);
-        kafkaTemplate.send("topic-one", bookJson);
-        System.out.println("Send message: " + book);
+    public void sendMessage(Book book)  {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            String bookJson = mapper.writeValueAsString(book);
+            kafkaTemplate.send("topic-one", bookJson);
+            System.out.println("Send message: " + book);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

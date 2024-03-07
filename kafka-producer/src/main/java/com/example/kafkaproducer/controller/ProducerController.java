@@ -2,7 +2,6 @@ package com.example.kafkaproducer.controller;
 
 import com.example.kafkaproducer.kafka.KafkaProducer;
 import com.example.kafkaproducer.model.Book;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +16,7 @@ public class ProducerController {
     }
 
     @PostMapping("/send")
-    public String send() throws JsonProcessingException {
+    public String send() {
         var book = new Book();
         book.setName("Book" + book.hashCode());
         book.setDescription("Description" + book.hashCode());

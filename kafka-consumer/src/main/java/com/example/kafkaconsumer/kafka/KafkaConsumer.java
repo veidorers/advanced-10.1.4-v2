@@ -25,7 +25,6 @@ public class KafkaConsumer {
             System.out.println("Received message: " + book);
             book.setChecked(true);
             kafkaProducer.sendMessage(book);
-            System.out.println("Send message: " + book);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
